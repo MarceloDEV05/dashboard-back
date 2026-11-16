@@ -1,4 +1,5 @@
 import { prisma } from "../../prisma/index.js";
+import { hash } from "bcryptjs";
 
 interface UserProps {
     name: string;
@@ -24,12 +25,14 @@ export class CreateUserService{
             throw new Error("Ja existe um usuário com este cadastro")
         }
 
+        const encryptedPassword = await hash(password, 8);
+
      
         const user = await prisma.users.create({
             data: {
                 name: name,
                 email: email,
-                password: password
+                password: encryptedPassword
             },
             select: {
                 id: true,
