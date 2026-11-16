@@ -32,7 +32,8 @@ export class CreateUserService{
             data: {
                 name: name,
                 email: email,
-                password: encryptedPassword
+                password: encryptedPassword,
+                
             },
             select: {
                 id: true,

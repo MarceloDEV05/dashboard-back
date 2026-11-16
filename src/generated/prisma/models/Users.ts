@@ -244,23 +244,23 @@ export type usersScalarWhereWithAggregatesInput = {
 }
 
 export type usersCreateInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   categories?: Prisma.categoriesCreateNestedManyWithoutUsersInput
   transactions?: Prisma.transactionsCreateNestedManyWithoutUsersInput
 }
 
 export type usersUncheckedCreateInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   categories?: Prisma.categoriesUncheckedCreateNestedManyWithoutUsersInput
   transactions?: Prisma.transactionsUncheckedCreateNestedManyWithoutUsersInput
 }
@@ -288,12 +288,12 @@ export type usersUncheckedUpdateInput = {
 }
 
 export type usersCreateManyInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
 }
 
 export type usersUpdateManyMutationInput = {
@@ -375,22 +375,22 @@ export type usersUpdateOneRequiredWithoutTransactionsNestedInput = {
 }
 
 export type usersCreateWithoutCategoriesInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   transactions?: Prisma.transactionsCreateNestedManyWithoutUsersInput
 }
 
 export type usersUncheckedCreateWithoutCategoriesInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   transactions?: Prisma.transactionsUncheckedCreateNestedManyWithoutUsersInput
 }
 
@@ -431,22 +431,22 @@ export type usersUncheckedUpdateWithoutCategoriesInput = {
 }
 
 export type usersCreateWithoutTransactionsInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   categories?: Prisma.categoriesCreateNestedManyWithoutUsersInput
 }
 
 export type usersUncheckedCreateWithoutTransactionsInput = {
-  id: string
+  id?: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt: Date | string
+  updatedAt?: Date | string
   categories?: Prisma.categoriesUncheckedCreateNestedManyWithoutUsersInput
 }
 
