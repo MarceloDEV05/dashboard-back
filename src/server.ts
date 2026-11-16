@@ -1,14 +1,13 @@
 import express from 'express';
-import { CreateUserController } from './controllers/user/CreateUserController.js';
+
+import { router } from './routes.js';
 
 const app = express();
 const port = 3333;
+app.use(express.json())
+app.use(router)
 
-app.get('/', (req, res) => {
-    res.send('Hello world')
-})
 
-app.get("/user", new CreateUserController().handle)
 
 app.listen(port, () => {
     console.log(`Server running in http://localhost:${port}`)
