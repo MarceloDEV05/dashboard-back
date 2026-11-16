@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Users` model and its related types.
+ * This file exports the `users` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model Users
+ * Model users
  * 
  */
-export type UsersModel = runtime.Types.Result.DefaultSelection<Prisma.$UsersPayload>
+export type usersModel = runtime.Types.Result.DefaultSelection<Prisma.$usersPayload>
 
 export type AggregateUsers = {
   _count: UsersCountAggregateOutputType | null
@@ -83,37 +83,37 @@ export type UsersCountAggregateInputType = {
 
 export type UsersAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Users to aggregate.
+   * Filter which users to aggregate.
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Users to fetch.
+   * Determine the order of users to fetch.
    */
-  orderBy?: Prisma.UsersOrderByWithRelationInput | Prisma.UsersOrderByWithRelationInput[]
+  orderBy?: Prisma.usersOrderByWithRelationInput | Prisma.usersOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.UsersWhereUniqueInput
+  cursor?: Prisma.usersWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Users from the position of the cursor.
+   * Take `±n` users from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Users.
+   * Skip the first `n` users.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Users
+   * Count returned users
   **/
   _count?: true | UsersCountAggregateInputType
   /**
@@ -141,11 +141,11 @@ export type GetUsersAggregateType<T extends UsersAggregateArgs> = {
 
 
 
-export type UsersGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UsersWhereInput
-  orderBy?: Prisma.UsersOrderByWithAggregationInput | Prisma.UsersOrderByWithAggregationInput[]
+export type usersGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.usersWhereInput
+  orderBy?: Prisma.usersOrderByWithAggregationInput | Prisma.usersOrderByWithAggregationInput[]
   by: Prisma.UsersScalarFieldEnum[] | Prisma.UsersScalarFieldEnum
-  having?: Prisma.UsersScalarWhereWithAggregatesInput
+  having?: Prisma.usersScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: UsersCountAggregateInputType | true
@@ -165,7 +165,7 @@ export type UsersGroupByOutputType = {
   _max: UsersMaxAggregateOutputType | null
 }
 
-export type GetUsersGroupByPayload<T extends UsersGroupByArgs> = Prisma.PrismaPromise<
+export type GetUsersGroupByPayload<T extends usersGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<UsersGroupByOutputType, T['by']> &
       {
@@ -180,123 +180,123 @@ export type GetUsersGroupByPayload<T extends UsersGroupByArgs> = Prisma.PrismaPr
 
 
 
-export type UsersWhereInput = {
-  AND?: Prisma.UsersWhereInput | Prisma.UsersWhereInput[]
-  OR?: Prisma.UsersWhereInput[]
-  NOT?: Prisma.UsersWhereInput | Prisma.UsersWhereInput[]
-  id?: Prisma.StringFilter<"Users"> | string
-  name?: Prisma.StringFilter<"Users"> | string
-  email?: Prisma.StringFilter<"Users"> | string
-  password?: Prisma.StringFilter<"Users"> | string
-  createdAt?: Prisma.DateTimeFilter<"Users"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Users"> | Date | string
-  categories?: Prisma.CategoryListRelationFilter
-  transactions?: Prisma.TransactionListRelationFilter
+export type usersWhereInput = {
+  AND?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
+  OR?: Prisma.usersWhereInput[]
+  NOT?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
+  id?: Prisma.StringFilter<"users"> | string
+  name?: Prisma.StringFilter<"users"> | string
+  email?: Prisma.StringFilter<"users"> | string
+  password?: Prisma.StringFilter<"users"> | string
+  createdAt?: Prisma.DateTimeFilter<"users"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"users"> | Date | string
+  categories?: Prisma.CategoriesListRelationFilter
+  transactions?: Prisma.TransactionsListRelationFilter
 }
 
-export type UsersOrderByWithRelationInput = {
+export type usersOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  categories?: Prisma.CategoryOrderByRelationAggregateInput
-  transactions?: Prisma.TransactionOrderByRelationAggregateInput
+  categories?: Prisma.categoriesOrderByRelationAggregateInput
+  transactions?: Prisma.transactionsOrderByRelationAggregateInput
 }
 
-export type UsersWhereUniqueInput = Prisma.AtLeast<{
+export type usersWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   email?: string
-  AND?: Prisma.UsersWhereInput | Prisma.UsersWhereInput[]
-  OR?: Prisma.UsersWhereInput[]
-  NOT?: Prisma.UsersWhereInput | Prisma.UsersWhereInput[]
-  name?: Prisma.StringFilter<"Users"> | string
-  password?: Prisma.StringFilter<"Users"> | string
-  createdAt?: Prisma.DateTimeFilter<"Users"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Users"> | Date | string
-  categories?: Prisma.CategoryListRelationFilter
-  transactions?: Prisma.TransactionListRelationFilter
+  AND?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
+  OR?: Prisma.usersWhereInput[]
+  NOT?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
+  name?: Prisma.StringFilter<"users"> | string
+  password?: Prisma.StringFilter<"users"> | string
+  createdAt?: Prisma.DateTimeFilter<"users"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"users"> | Date | string
+  categories?: Prisma.CategoriesListRelationFilter
+  transactions?: Prisma.TransactionsListRelationFilter
 }, "id" | "email">
 
-export type UsersOrderByWithAggregationInput = {
+export type usersOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   email?: Prisma.SortOrder
   password?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.UsersCountOrderByAggregateInput
-  _max?: Prisma.UsersMaxOrderByAggregateInput
-  _min?: Prisma.UsersMinOrderByAggregateInput
+  _count?: Prisma.usersCountOrderByAggregateInput
+  _max?: Prisma.usersMaxOrderByAggregateInput
+  _min?: Prisma.usersMinOrderByAggregateInput
 }
 
-export type UsersScalarWhereWithAggregatesInput = {
-  AND?: Prisma.UsersScalarWhereWithAggregatesInput | Prisma.UsersScalarWhereWithAggregatesInput[]
-  OR?: Prisma.UsersScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.UsersScalarWhereWithAggregatesInput | Prisma.UsersScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"Users"> | string
-  name?: Prisma.StringWithAggregatesFilter<"Users"> | string
-  email?: Prisma.StringWithAggregatesFilter<"Users"> | string
-  password?: Prisma.StringWithAggregatesFilter<"Users"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Users"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Users"> | Date | string
+export type usersScalarWhereWithAggregatesInput = {
+  AND?: Prisma.usersScalarWhereWithAggregatesInput | Prisma.usersScalarWhereWithAggregatesInput[]
+  OR?: Prisma.usersScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.usersScalarWhereWithAggregatesInput | Prisma.usersScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"users"> | string
+  name?: Prisma.StringWithAggregatesFilter<"users"> | string
+  email?: Prisma.StringWithAggregatesFilter<"users"> | string
+  password?: Prisma.StringWithAggregatesFilter<"users"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
 }
 
-export type UsersCreateInput = {
-  id?: string
+export type usersCreateInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  categories?: Prisma.categoriesCreateNestedManyWithoutUsersInput
+  transactions?: Prisma.transactionsCreateNestedManyWithoutUsersInput
 }
 
-export type UsersUncheckedCreateInput = {
-  id?: string
+export type usersUncheckedCreateInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  categories?: Prisma.categoriesUncheckedCreateNestedManyWithoutUsersInput
+  transactions?: Prisma.transactionsUncheckedCreateNestedManyWithoutUsersInput
 }
 
-export type UsersUpdateInput = {
+export type usersUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
+  categories?: Prisma.categoriesUpdateManyWithoutUsersNestedInput
+  transactions?: Prisma.transactionsUpdateManyWithoutUsersNestedInput
 }
 
-export type UsersUncheckedUpdateInput = {
+export type usersUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
+  categories?: Prisma.categoriesUncheckedUpdateManyWithoutUsersNestedInput
+  transactions?: Prisma.transactionsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
-export type UsersCreateManyInput = {
-  id?: string
+export type usersCreateManyInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
+  updatedAt: Date | string
 }
 
-export type UsersUpdateManyMutationInput = {
+export type usersUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
@@ -305,193 +305,185 @@ export type UsersUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type UsersUncheckedUpdateManyInput = {
+export type usersUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type UsersCountOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
-}
-
-export type UsersMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
-}
-
-export type UsersMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  name?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
 }
 
 export type UsersScalarRelationFilter = {
-  is?: Prisma.UsersWhereInput
-  isNot?: Prisma.UsersWhereInput
+  is?: Prisma.usersWhereInput
+  isNot?: Prisma.usersWhereInput
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
+export type usersCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
+export type usersMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
-export type UsersCreateNestedOneWithoutCategoriesInput = {
-  create?: Prisma.XOR<Prisma.UsersCreateWithoutCategoriesInput, Prisma.UsersUncheckedCreateWithoutCategoriesInput>
-  connectOrCreate?: Prisma.UsersCreateOrConnectWithoutCategoriesInput
-  connect?: Prisma.UsersWhereUniqueInput
+export type usersMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
-export type UsersUpdateOneRequiredWithoutCategoriesNestedInput = {
-  create?: Prisma.XOR<Prisma.UsersCreateWithoutCategoriesInput, Prisma.UsersUncheckedCreateWithoutCategoriesInput>
-  connectOrCreate?: Prisma.UsersCreateOrConnectWithoutCategoriesInput
-  upsert?: Prisma.UsersUpsertWithoutCategoriesInput
-  connect?: Prisma.UsersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UsersUpdateToOneWithWhereWithoutCategoriesInput, Prisma.UsersUpdateWithoutCategoriesInput>, Prisma.UsersUncheckedUpdateWithoutCategoriesInput>
+export type usersCreateNestedOneWithoutCategoriesInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutCategoriesInput, Prisma.usersUncheckedCreateWithoutCategoriesInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutCategoriesInput
+  connect?: Prisma.usersWhereUniqueInput
 }
 
-export type UsersCreateNestedOneWithoutTransactionsInput = {
-  create?: Prisma.XOR<Prisma.UsersCreateWithoutTransactionsInput, Prisma.UsersUncheckedCreateWithoutTransactionsInput>
-  connectOrCreate?: Prisma.UsersCreateOrConnectWithoutTransactionsInput
-  connect?: Prisma.UsersWhereUniqueInput
+export type usersUpdateOneRequiredWithoutCategoriesNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutCategoriesInput, Prisma.usersUncheckedCreateWithoutCategoriesInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutCategoriesInput
+  upsert?: Prisma.usersUpsertWithoutCategoriesInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutCategoriesInput, Prisma.usersUpdateWithoutCategoriesInput>, Prisma.usersUncheckedUpdateWithoutCategoriesInput>
 }
 
-export type UsersUpdateOneRequiredWithoutTransactionsNestedInput = {
-  create?: Prisma.XOR<Prisma.UsersCreateWithoutTransactionsInput, Prisma.UsersUncheckedCreateWithoutTransactionsInput>
-  connectOrCreate?: Prisma.UsersCreateOrConnectWithoutTransactionsInput
-  upsert?: Prisma.UsersUpsertWithoutTransactionsInput
-  connect?: Prisma.UsersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UsersUpdateToOneWithWhereWithoutTransactionsInput, Prisma.UsersUpdateWithoutTransactionsInput>, Prisma.UsersUncheckedUpdateWithoutTransactionsInput>
+export type usersCreateNestedOneWithoutTransactionsInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutTransactionsInput, Prisma.usersUncheckedCreateWithoutTransactionsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutTransactionsInput
+  connect?: Prisma.usersWhereUniqueInput
 }
 
-export type UsersCreateWithoutCategoriesInput = {
-  id?: string
+export type usersUpdateOneRequiredWithoutTransactionsNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutTransactionsInput, Prisma.usersUncheckedCreateWithoutTransactionsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutTransactionsInput
+  upsert?: Prisma.usersUpsertWithoutTransactionsInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutTransactionsInput, Prisma.usersUpdateWithoutTransactionsInput>, Prisma.usersUncheckedUpdateWithoutTransactionsInput>
+}
+
+export type usersCreateWithoutCategoriesInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  transactions?: Prisma.transactionsCreateNestedManyWithoutUsersInput
 }
 
-export type UsersUncheckedCreateWithoutCategoriesInput = {
-  id?: string
+export type usersUncheckedCreateWithoutCategoriesInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  transactions?: Prisma.transactionsUncheckedCreateNestedManyWithoutUsersInput
 }
 
-export type UsersCreateOrConnectWithoutCategoriesInput = {
-  where: Prisma.UsersWhereUniqueInput
-  create: Prisma.XOR<Prisma.UsersCreateWithoutCategoriesInput, Prisma.UsersUncheckedCreateWithoutCategoriesInput>
+export type usersCreateOrConnectWithoutCategoriesInput = {
+  where: Prisma.usersWhereUniqueInput
+  create: Prisma.XOR<Prisma.usersCreateWithoutCategoriesInput, Prisma.usersUncheckedCreateWithoutCategoriesInput>
 }
 
-export type UsersUpsertWithoutCategoriesInput = {
-  update: Prisma.XOR<Prisma.UsersUpdateWithoutCategoriesInput, Prisma.UsersUncheckedUpdateWithoutCategoriesInput>
-  create: Prisma.XOR<Prisma.UsersCreateWithoutCategoriesInput, Prisma.UsersUncheckedCreateWithoutCategoriesInput>
-  where?: Prisma.UsersWhereInput
+export type usersUpsertWithoutCategoriesInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutCategoriesInput, Prisma.usersUncheckedUpdateWithoutCategoriesInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutCategoriesInput, Prisma.usersUncheckedCreateWithoutCategoriesInput>
+  where?: Prisma.usersWhereInput
 }
 
-export type UsersUpdateToOneWithWhereWithoutCategoriesInput = {
-  where?: Prisma.UsersWhereInput
-  data: Prisma.XOR<Prisma.UsersUpdateWithoutCategoriesInput, Prisma.UsersUncheckedUpdateWithoutCategoriesInput>
+export type usersUpdateToOneWithWhereWithoutCategoriesInput = {
+  where?: Prisma.usersWhereInput
+  data: Prisma.XOR<Prisma.usersUpdateWithoutCategoriesInput, Prisma.usersUncheckedUpdateWithoutCategoriesInput>
 }
 
-export type UsersUpdateWithoutCategoriesInput = {
+export type usersUpdateWithoutCategoriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.transactionsUpdateManyWithoutUsersNestedInput
 }
 
-export type UsersUncheckedUpdateWithoutCategoriesInput = {
+export type usersUncheckedUpdateWithoutCategoriesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.transactionsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
-export type UsersCreateWithoutTransactionsInput = {
-  id?: string
+export type usersCreateWithoutTransactionsInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  categories?: Prisma.CategoryCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  categories?: Prisma.categoriesCreateNestedManyWithoutUsersInput
 }
 
-export type UsersUncheckedCreateWithoutTransactionsInput = {
-  id?: string
+export type usersUncheckedCreateWithoutTransactionsInput = {
+  id: string
   name: string
   email: string
   password: string
   createdAt?: Date | string
-  updatedAt?: Date | string
-  categories?: Prisma.CategoryUncheckedCreateNestedManyWithoutUserInput
+  updatedAt: Date | string
+  categories?: Prisma.categoriesUncheckedCreateNestedManyWithoutUsersInput
 }
 
-export type UsersCreateOrConnectWithoutTransactionsInput = {
-  where: Prisma.UsersWhereUniqueInput
-  create: Prisma.XOR<Prisma.UsersCreateWithoutTransactionsInput, Prisma.UsersUncheckedCreateWithoutTransactionsInput>
+export type usersCreateOrConnectWithoutTransactionsInput = {
+  where: Prisma.usersWhereUniqueInput
+  create: Prisma.XOR<Prisma.usersCreateWithoutTransactionsInput, Prisma.usersUncheckedCreateWithoutTransactionsInput>
 }
 
-export type UsersUpsertWithoutTransactionsInput = {
-  update: Prisma.XOR<Prisma.UsersUpdateWithoutTransactionsInput, Prisma.UsersUncheckedUpdateWithoutTransactionsInput>
-  create: Prisma.XOR<Prisma.UsersCreateWithoutTransactionsInput, Prisma.UsersUncheckedCreateWithoutTransactionsInput>
-  where?: Prisma.UsersWhereInput
+export type usersUpsertWithoutTransactionsInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutTransactionsInput, Prisma.usersUncheckedUpdateWithoutTransactionsInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutTransactionsInput, Prisma.usersUncheckedCreateWithoutTransactionsInput>
+  where?: Prisma.usersWhereInput
 }
 
-export type UsersUpdateToOneWithWhereWithoutTransactionsInput = {
-  where?: Prisma.UsersWhereInput
-  data: Prisma.XOR<Prisma.UsersUpdateWithoutTransactionsInput, Prisma.UsersUncheckedUpdateWithoutTransactionsInput>
+export type usersUpdateToOneWithWhereWithoutTransactionsInput = {
+  where?: Prisma.usersWhereInput
+  data: Prisma.XOR<Prisma.usersUpdateWithoutTransactionsInput, Prisma.usersUncheckedUpdateWithoutTransactionsInput>
 }
 
-export type UsersUpdateWithoutTransactionsInput = {
+export type usersUpdateWithoutTransactionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  categories?: Prisma.CategoryUpdateManyWithoutUserNestedInput
+  categories?: Prisma.categoriesUpdateManyWithoutUsersNestedInput
 }
 
-export type UsersUncheckedUpdateWithoutTransactionsInput = {
+export type usersUncheckedUpdateWithoutTransactionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  categories?: Prisma.CategoryUncheckedUpdateManyWithoutUserNestedInput
+  categories?: Prisma.categoriesUncheckedUpdateManyWithoutUsersNestedInput
 }
 
 
@@ -523,30 +515,30 @@ export type UsersCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
  * UsersCountOutputType without action
  */
 export type UsersCountOutputTypeCountCategoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CategoryWhereInput
+  where?: Prisma.categoriesWhereInput
 }
 
 /**
  * UsersCountOutputType without action
  */
 export type UsersCountOutputTypeCountTransactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TransactionWhereInput
+  where?: Prisma.transactionsWhereInput
 }
 
 
-export type UsersSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type usersSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   email?: boolean
   password?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  categories?: boolean | Prisma.Users$categoriesArgs<ExtArgs>
-  transactions?: boolean | Prisma.Users$transactionsArgs<ExtArgs>
+  categories?: boolean | Prisma.users$categoriesArgs<ExtArgs>
+  transactions?: boolean | Prisma.users$transactionsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["users"]>
 
-export type UsersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type usersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   email?: boolean
@@ -555,7 +547,7 @@ export type UsersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   updatedAt?: boolean
 }, ExtArgs["result"]["users"]>
 
-export type UsersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type usersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   email?: boolean
@@ -564,7 +556,7 @@ export type UsersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   updatedAt?: boolean
 }, ExtArgs["result"]["users"]>
 
-export type UsersSelectScalar = {
+export type usersSelectScalar = {
   id?: boolean
   name?: boolean
   email?: boolean
@@ -573,20 +565,20 @@ export type UsersSelectScalar = {
   updatedAt?: boolean
 }
 
-export type UsersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["users"]>
-export type UsersInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  categories?: boolean | Prisma.Users$categoriesArgs<ExtArgs>
-  transactions?: boolean | Prisma.Users$transactionsArgs<ExtArgs>
+export type usersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "email" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["users"]>
+export type usersInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  categories?: boolean | Prisma.users$categoriesArgs<ExtArgs>
+  transactions?: boolean | Prisma.users$transactionsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type UsersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
-export type UsersIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type usersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type usersIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
-export type $UsersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Users"
+export type $usersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "users"
   objects: {
-    categories: Prisma.$CategoryPayload<ExtArgs>[]
-    transactions: Prisma.$TransactionPayload<ExtArgs>[]
+    categories: Prisma.$categoriesPayload<ExtArgs>[]
+    transactions: Prisma.$transactionsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -599,18 +591,18 @@ export type $UsersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   composites: {}
 }
 
-export type UsersGetPayload<S extends boolean | null | undefined | UsersDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$UsersPayload, S>
+export type usersGetPayload<S extends boolean | null | undefined | usersDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$usersPayload, S>
 
-export type UsersCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<UsersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type usersCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<usersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: UsersCountAggregateInputType | true
   }
 
-export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Users'], meta: { name: 'Users' } }
+export interface usersDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['users'], meta: { name: 'users' } }
   /**
    * Find zero or one Users that matches the filter.
-   * @param {UsersFindUniqueArgs} args - Arguments to find a Users
+   * @param {usersFindUniqueArgs} args - Arguments to find a Users
    * @example
    * // Get one Users
    * const users = await prisma.users.findUnique({
@@ -619,12 +611,12 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findUnique<T extends UsersFindUniqueArgs>(args: Prisma.SelectSubset<T, UsersFindUniqueArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends usersFindUniqueArgs>(args: Prisma.SelectSubset<T, usersFindUniqueArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Users that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {UsersFindUniqueOrThrowArgs} args - Arguments to find a Users
+   * @param {usersFindUniqueOrThrowArgs} args - Arguments to find a Users
    * @example
    * // Get one Users
    * const users = await prisma.users.findUniqueOrThrow({
@@ -633,13 +625,13 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findUniqueOrThrow<T extends UsersFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, UsersFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends usersFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, usersFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Users that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersFindFirstArgs} args - Arguments to find a Users
+   * @param {usersFindFirstArgs} args - Arguments to find a Users
    * @example
    * // Get one Users
    * const users = await prisma.users.findFirst({
@@ -648,14 +640,14 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findFirst<T extends UsersFindFirstArgs>(args?: Prisma.SelectSubset<T, UsersFindFirstArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends usersFindFirstArgs>(args?: Prisma.SelectSubset<T, usersFindFirstArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Users that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersFindFirstOrThrowArgs} args - Arguments to find a Users
+   * @param {usersFindFirstOrThrowArgs} args - Arguments to find a Users
    * @example
    * // Get one Users
    * const users = await prisma.users.findFirstOrThrow({
@@ -664,13 +656,13 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  findFirstOrThrow<T extends UsersFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, UsersFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends usersFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, usersFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Users that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {usersFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Users
    * const users = await prisma.users.findMany()
@@ -682,11 +674,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * const usersWithIdOnly = await prisma.users.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends UsersFindManyArgs>(args?: Prisma.SelectSubset<T, UsersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends usersFindManyArgs>(args?: Prisma.SelectSubset<T, usersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Users.
-   * @param {UsersCreateArgs} args - Arguments to create a Users.
+   * @param {usersCreateArgs} args - Arguments to create a Users.
    * @example
    * // Create one Users
    * const Users = await prisma.users.create({
@@ -696,11 +688,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  create<T extends UsersCreateArgs>(args: Prisma.SelectSubset<T, UsersCreateArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends usersCreateArgs>(args: Prisma.SelectSubset<T, usersCreateArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Users.
-   * @param {UsersCreateManyArgs} args - Arguments to create many Users.
+   * @param {usersCreateManyArgs} args - Arguments to create many Users.
    * @example
    * // Create many Users
    * const users = await prisma.users.createMany({
@@ -710,11 +702,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    *     
    */
-  createMany<T extends UsersCreateManyArgs>(args?: Prisma.SelectSubset<T, UsersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends usersCreateManyArgs>(args?: Prisma.SelectSubset<T, usersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Users and returns the data saved in the database.
-   * @param {UsersCreateManyAndReturnArgs} args - Arguments to create many Users.
+   * @param {usersCreateManyAndReturnArgs} args - Arguments to create many Users.
    * @example
    * // Create many Users
    * const users = await prisma.users.createManyAndReturn({
@@ -734,11 +726,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends UsersCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, UsersCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends usersCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, usersCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Users.
-   * @param {UsersDeleteArgs} args - Arguments to delete one Users.
+   * @param {usersDeleteArgs} args - Arguments to delete one Users.
    * @example
    * // Delete one Users
    * const Users = await prisma.users.delete({
@@ -748,11 +740,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  delete<T extends UsersDeleteArgs>(args: Prisma.SelectSubset<T, UsersDeleteArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends usersDeleteArgs>(args: Prisma.SelectSubset<T, usersDeleteArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Users.
-   * @param {UsersUpdateArgs} args - Arguments to update one Users.
+   * @param {usersUpdateArgs} args - Arguments to update one Users.
    * @example
    * // Update one Users
    * const users = await prisma.users.update({
@@ -765,11 +757,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  update<T extends UsersUpdateArgs>(args: Prisma.SelectSubset<T, UsersUpdateArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends usersUpdateArgs>(args: Prisma.SelectSubset<T, usersUpdateArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Users.
-   * @param {UsersDeleteManyArgs} args - Arguments to filter Users to delete.
+   * @param {usersDeleteManyArgs} args - Arguments to filter Users to delete.
    * @example
    * // Delete a few Users
    * const { count } = await prisma.users.deleteMany({
@@ -779,13 +771,13 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  deleteMany<T extends UsersDeleteManyArgs>(args?: Prisma.SelectSubset<T, UsersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends usersDeleteManyArgs>(args?: Prisma.SelectSubset<T, usersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Users.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {usersUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Users
    * const users = await prisma.users.updateMany({
@@ -798,11 +790,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * })
    * 
    */
-  updateMany<T extends UsersUpdateManyArgs>(args: Prisma.SelectSubset<T, UsersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends usersUpdateManyArgs>(args: Prisma.SelectSubset<T, usersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Users and returns the data updated in the database.
-   * @param {UsersUpdateManyAndReturnArgs} args - Arguments to update many Users.
+   * @param {usersUpdateManyAndReturnArgs} args - Arguments to update many Users.
    * @example
    * // Update many Users
    * const users = await prisma.users.updateManyAndReturn({
@@ -828,11 +820,11 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends UsersUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, UsersUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends usersUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, usersUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Users.
-   * @param {UsersUpsertArgs} args - Arguments to update or create a Users.
+   * @param {usersUpsertArgs} args - Arguments to update or create a Users.
    * @example
    * // Update or create a Users
    * const users = await prisma.users.upsert({
@@ -847,14 +839,14 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
    */
-  upsert<T extends UsersUpsertArgs>(args: Prisma.SelectSubset<T, UsersUpsertArgs<ExtArgs>>): Prisma.Prisma__UsersClient<runtime.Types.Result.GetResult<Prisma.$UsersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends usersUpsertArgs>(args: Prisma.SelectSubset<T, usersUpsertArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Users.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersCountArgs} args - Arguments to filter Users to count.
+   * @param {usersCountArgs} args - Arguments to filter Users to count.
    * @example
    * // Count the number of Users
    * const count = await prisma.users.count({
@@ -863,8 +855,8 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    *   }
    * })
   **/
-  count<T extends UsersCountArgs>(
-    args?: Prisma.Subset<T, UsersCountArgs>,
+  count<T extends usersCountArgs>(
+    args?: Prisma.Subset<T, usersCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -903,7 +895,7 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * Group by Users.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {UsersGroupByArgs} args - Group by arguments.
+   * @param {usersGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -918,14 +910,14 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
    * 
   **/
   groupBy<
-    T extends UsersGroupByArgs,
+    T extends usersGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: UsersGroupByArgs['orderBy'] }
-      : { orderBy?: UsersGroupByArgs['orderBy'] },
+      ? { orderBy: usersGroupByArgs['orderBy'] }
+      : { orderBy?: usersGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -974,23 +966,23 @@ export interface UsersDelegate<ExtArgs extends runtime.Types.Extensions.Internal
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, UsersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, usersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Users model
+ * Fields of the users model
  */
-readonly fields: UsersFieldRefs;
+readonly fields: usersFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Users.
+ * The delegate class that acts as a "Promise-like" for users.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__UsersClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__usersClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  categories<T extends Prisma.Users$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  transactions<T extends Prisma.Users$transactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Users$transactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  categories<T extends Prisma.users$categoriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  transactions<T extends Prisma.users$transactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$transactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$transactionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1017,469 +1009,469 @@ export interface Prisma__UsersClient<T, Null = never, ExtArgs extends runtime.Ty
 
 
 /**
- * Fields of the Users model
+ * Fields of the users model
  */
-export interface UsersFieldRefs {
-  readonly id: Prisma.FieldRef<"Users", 'String'>
-  readonly name: Prisma.FieldRef<"Users", 'String'>
-  readonly email: Prisma.FieldRef<"Users", 'String'>
-  readonly password: Prisma.FieldRef<"Users", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Users", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Users", 'DateTime'>
+export interface usersFieldRefs {
+  readonly id: Prisma.FieldRef<"users", 'String'>
+  readonly name: Prisma.FieldRef<"users", 'String'>
+  readonly email: Prisma.FieldRef<"users", 'String'>
+  readonly password: Prisma.FieldRef<"users", 'String'>
+  readonly createdAt: Prisma.FieldRef<"users", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"users", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Users findUnique
+ * users findUnique
  */
-export type UsersFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter, which Users to fetch.
+   * Filter, which users to fetch.
    */
-  where: Prisma.UsersWhereUniqueInput
+  where: Prisma.usersWhereUniqueInput
 }
 
 /**
- * Users findUniqueOrThrow
+ * users findUniqueOrThrow
  */
-export type UsersFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter, which Users to fetch.
+   * Filter, which users to fetch.
    */
-  where: Prisma.UsersWhereUniqueInput
+  where: Prisma.usersWhereUniqueInput
 }
 
 /**
- * Users findFirst
+ * users findFirst
  */
-export type UsersFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter, which Users to fetch.
+   * Filter, which users to fetch.
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Users to fetch.
+   * Determine the order of users to fetch.
    */
-  orderBy?: Prisma.UsersOrderByWithRelationInput | Prisma.UsersOrderByWithRelationInput[]
+  orderBy?: Prisma.usersOrderByWithRelationInput | Prisma.usersOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Users.
+   * Sets the position for searching for users.
    */
-  cursor?: Prisma.UsersWhereUniqueInput
+  cursor?: Prisma.usersWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Users from the position of the cursor.
+   * Take `±n` users from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Users.
+   * Skip the first `n` users.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Users.
+   * Filter by unique combinations of users.
    */
   distinct?: Prisma.UsersScalarFieldEnum | Prisma.UsersScalarFieldEnum[]
 }
 
 /**
- * Users findFirstOrThrow
+ * users findFirstOrThrow
  */
-export type UsersFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter, which Users to fetch.
+   * Filter, which users to fetch.
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Users to fetch.
+   * Determine the order of users to fetch.
    */
-  orderBy?: Prisma.UsersOrderByWithRelationInput | Prisma.UsersOrderByWithRelationInput[]
+  orderBy?: Prisma.usersOrderByWithRelationInput | Prisma.usersOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Users.
+   * Sets the position for searching for users.
    */
-  cursor?: Prisma.UsersWhereUniqueInput
+  cursor?: Prisma.usersWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Users from the position of the cursor.
+   * Take `±n` users from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Users.
+   * Skip the first `n` users.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Users.
+   * Filter by unique combinations of users.
    */
   distinct?: Prisma.UsersScalarFieldEnum | Prisma.UsersScalarFieldEnum[]
 }
 
 /**
- * Users findMany
+ * users findMany
  */
-export type UsersFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter, which Users to fetch.
+   * Filter, which users to fetch.
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Users to fetch.
+   * Determine the order of users to fetch.
    */
-  orderBy?: Prisma.UsersOrderByWithRelationInput | Prisma.UsersOrderByWithRelationInput[]
+  orderBy?: Prisma.usersOrderByWithRelationInput | Prisma.usersOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Users.
+   * Sets the position for listing users.
    */
-  cursor?: Prisma.UsersWhereUniqueInput
+  cursor?: Prisma.usersWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Users from the position of the cursor.
+   * Take `±n` users from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Users.
+   * Skip the first `n` users.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Users.
+   * Filter by unique combinations of users.
    */
   distinct?: Prisma.UsersScalarFieldEnum | Prisma.UsersScalarFieldEnum[]
 }
 
 /**
- * Users create
+ * users create
  */
-export type UsersCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * The data needed to create a Users.
+   * The data needed to create a users.
    */
-  data: Prisma.XOR<Prisma.UsersCreateInput, Prisma.UsersUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.usersCreateInput, Prisma.usersUncheckedCreateInput>
 }
 
 /**
- * Users createMany
+ * users createMany
  */
-export type UsersCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Users.
+   * The data used to create many users.
    */
-  data: Prisma.UsersCreateManyInput | Prisma.UsersCreateManyInput[]
+  data: Prisma.usersCreateManyInput | Prisma.usersCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Users createManyAndReturn
+ * users createManyAndReturn
  */
-export type UsersCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.usersSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
-   * The data used to create many Users.
+   * The data used to create many users.
    */
-  data: Prisma.UsersCreateManyInput | Prisma.UsersCreateManyInput[]
+  data: Prisma.usersCreateManyInput | Prisma.usersCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Users update
+ * users update
  */
-export type UsersUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * The data needed to update a Users.
+   * The data needed to update a users.
    */
-  data: Prisma.XOR<Prisma.UsersUpdateInput, Prisma.UsersUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.usersUpdateInput, Prisma.usersUncheckedUpdateInput>
   /**
-   * Choose, which Users to update.
+   * Choose, which users to update.
    */
-  where: Prisma.UsersWhereUniqueInput
+  where: Prisma.usersWhereUniqueInput
 }
 
 /**
- * Users updateMany
+ * users updateMany
  */
-export type UsersUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Users.
+   * The data used to update users.
    */
-  data: Prisma.XOR<Prisma.UsersUpdateManyMutationInput, Prisma.UsersUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.usersUpdateManyMutationInput, Prisma.usersUncheckedUpdateManyInput>
   /**
-   * Filter which Users to update
+   * Filter which users to update
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
-   * Limit how many Users to update.
+   * Limit how many users to update.
    */
   limit?: number
 }
 
 /**
- * Users updateManyAndReturn
+ * users updateManyAndReturn
  */
-export type UsersUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.usersSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
-   * The data used to update Users.
+   * The data used to update users.
    */
-  data: Prisma.XOR<Prisma.UsersUpdateManyMutationInput, Prisma.UsersUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.usersUpdateManyMutationInput, Prisma.usersUncheckedUpdateManyInput>
   /**
-   * Filter which Users to update
+   * Filter which users to update
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
-   * Limit how many Users to update.
+   * Limit how many users to update.
    */
   limit?: number
 }
 
 /**
- * Users upsert
+ * users upsert
  */
-export type UsersUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * The filter to search for the Users to update in case it exists.
+   * The filter to search for the users to update in case it exists.
    */
-  where: Prisma.UsersWhereUniqueInput
+  where: Prisma.usersWhereUniqueInput
   /**
-   * In case the Users found by the `where` argument doesn't exist, create a new Users with this data.
+   * In case the users found by the `where` argument doesn't exist, create a new users with this data.
    */
-  create: Prisma.XOR<Prisma.UsersCreateInput, Prisma.UsersUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.usersCreateInput, Prisma.usersUncheckedCreateInput>
   /**
-   * In case the Users was found with the provided `where` argument, update it with this data.
+   * In case the users was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.UsersUpdateInput, Prisma.UsersUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.usersUpdateInput, Prisma.usersUncheckedUpdateInput>
 }
 
 /**
- * Users delete
+ * users delete
  */
-export type UsersDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
   /**
-   * Filter which Users to delete.
+   * Filter which users to delete.
    */
-  where: Prisma.UsersWhereUniqueInput
+  where: Prisma.usersWhereUniqueInput
 }
 
 /**
- * Users deleteMany
+ * users deleteMany
  */
-export type UsersDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Users to delete
+   * Filter which users to delete
    */
-  where?: Prisma.UsersWhereInput
+  where?: Prisma.usersWhereInput
   /**
-   * Limit how many Users to delete.
+   * Limit how many users to delete.
    */
   limit?: number
 }
 
 /**
- * Users.categories
+ * users.categories
  */
-export type Users$categoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type users$categoriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Category
+   * Select specific fields to fetch from the categories
    */
-  select?: Prisma.CategorySelect<ExtArgs> | null
+  select?: Prisma.categoriesSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Category
+   * Omit specific fields from the categories
    */
-  omit?: Prisma.CategoryOmit<ExtArgs> | null
+  omit?: Prisma.categoriesOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.CategoryInclude<ExtArgs> | null
-  where?: Prisma.CategoryWhereInput
-  orderBy?: Prisma.CategoryOrderByWithRelationInput | Prisma.CategoryOrderByWithRelationInput[]
-  cursor?: Prisma.CategoryWhereUniqueInput
+  include?: Prisma.categoriesInclude<ExtArgs> | null
+  where?: Prisma.categoriesWhereInput
+  orderBy?: Prisma.categoriesOrderByWithRelationInput | Prisma.categoriesOrderByWithRelationInput[]
+  cursor?: Prisma.categoriesWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.CategoryScalarFieldEnum | Prisma.CategoryScalarFieldEnum[]
+  distinct?: Prisma.CategoriesScalarFieldEnum | Prisma.CategoriesScalarFieldEnum[]
 }
 
 /**
- * Users.transactions
+ * users.transactions
  */
-export type Users$transactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type users$transactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Transaction
+   * Select specific fields to fetch from the transactions
    */
-  select?: Prisma.TransactionSelect<ExtArgs> | null
+  select?: Prisma.transactionsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Transaction
+   * Omit specific fields from the transactions
    */
-  omit?: Prisma.TransactionOmit<ExtArgs> | null
+  omit?: Prisma.transactionsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TransactionInclude<ExtArgs> | null
-  where?: Prisma.TransactionWhereInput
-  orderBy?: Prisma.TransactionOrderByWithRelationInput | Prisma.TransactionOrderByWithRelationInput[]
-  cursor?: Prisma.TransactionWhereUniqueInput
+  include?: Prisma.transactionsInclude<ExtArgs> | null
+  where?: Prisma.transactionsWhereInput
+  orderBy?: Prisma.transactionsOrderByWithRelationInput | Prisma.transactionsOrderByWithRelationInput[]
+  cursor?: Prisma.transactionsWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.TransactionScalarFieldEnum | Prisma.TransactionScalarFieldEnum[]
+  distinct?: Prisma.TransactionsScalarFieldEnum | Prisma.TransactionsScalarFieldEnum[]
 }
 
 /**
- * Users without action
+ * users without action
  */
-export type UsersDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type usersDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Users
+   * Select specific fields to fetch from the users
    */
-  select?: Prisma.UsersSelect<ExtArgs> | null
+  select?: Prisma.usersSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Users
+   * Omit specific fields from the users
    */
-  omit?: Prisma.UsersOmit<ExtArgs> | null
+  omit?: Prisma.usersOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UsersInclude<ExtArgs> | null
+  include?: Prisma.usersInclude<ExtArgs> | null
 }
